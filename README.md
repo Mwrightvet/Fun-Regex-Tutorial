@@ -1,4 +1,4 @@
-# Regex Tutorial Project
+# Fun Regex Tutorial 
 
 This project is a tutorial explaining various regular expressions (regex) commonly used in web development. It aims to provide web developer learnings with a comprehensive understanding of regex patterns and their applications.
 
