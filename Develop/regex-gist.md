@@ -249,8 +249,10 @@ console.log(matchWithBackref[0]); // Output: "<address>123 Main Street<br>Cityvi
 
 ```regex
 ^(?!.*(?:abc|123))(?!.*(\w)\1)(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}.*123$
+```
 
 ### Example:
+
 - `^`: Asserts the start of the string.
 - `(?!.*(?:abc|123))`: Negative look-ahead to ensure the password doesn't start with "abc" or end with "123".
 - `(?!.*(\w)\1)`: Negative look-ahead to ensure there are no consecutive repeating characters.
@@ -264,4 +266,3 @@ console.log(matchWithBackref[0]); // Output: "<address>123 Main Street<br>Cityvi
 ## Author
 
 This tutorial is authored by [Mel W]. You can find more about the author on [GitHub](https://github.com/Mwrightvet).
-```
