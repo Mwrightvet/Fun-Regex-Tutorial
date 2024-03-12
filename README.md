@@ -20,5 +20,11 @@ A regex, short for regular expression, is a sequence of characters defining a sp
 
 This tutorial is authored by Mel Wright at: https://github.com/Mwrightvet.
 
-Getting Started
+# Getting Started
+
 To begin exploring the tutorial, simply navigate through the table of contents and click on the links to access detailed explanations of each regex component.
+
+# Credits
+
+- Url:carbon.now.sh
+-
