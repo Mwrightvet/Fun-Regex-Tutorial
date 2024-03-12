@@ -210,17 +210,17 @@ console.log(matchGreedy[1]);
 // Output: "123 Main Street<br>Cityville, State<br>Country"
 ```
 
-In the regular expression
+In the regular expression:
 
-```/<address>(.*?)</address>/
-
+```
+const regexGreedy = /<address>(.*?)</address>/;
 ```
 
 the boundaries are used to looking for text that appears between <address> and </address> tags in the homeAddress string.
 
 ## Back-references
 
-n regex, a back-reference allows you to refer back to a captured group within the same regular expression pattern. When you capture a group using parentheses, you can reference that captured group later in the pattern using a back-reference.
+A back-reference allows you to refer back to a captured group within the same regular expression pattern. When you capture a group using parentheses, you can reference that captured group later in the pattern using a back-reference.
 
 In the example provided earlier where we matched the content within <address> tags using a lazy regex, we didn't utilize back-references. However, I can illustrate how back-references could be used in a different context:
 
