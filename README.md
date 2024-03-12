@@ -10,7 +10,7 @@ As a web developer, you may come across features where regex can be a powerful t
 
 # Tutorial GIST
 
-https://gist.github.com/Mwrightvet/64d7ffa4ff991589c9bcf8c65071bbf2.js
+- https://gist.github.com/Mwrightvet/64d7ffa4ff991589c9bcf8c65071bbf2
 
 # What Is a Regex?
 
