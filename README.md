@@ -1,94 +1,24 @@
-# Fun Regex Tutorial 
+# Regex Tutorial
 
-This project is a tutorial explaining various regular expressions (regex) commonly used in web development. It aims to provide web developer learnings with a comprehensive understanding of regex patterns and their applications.
+by M. Wright [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Table of Contents
+This is a brief tutorial explaining specific regular expressions (regex) targeted towards web development students or for those who need a reference tool. Regex patterns help in various applications, such as validating input, searching and replacing patterns within strings, and parsing data.
 
-- [Introduction](#introduction)
-- [Summary](#summary)
-- [Anchors](#anchors)
-- [Quantifiers](#quantifiers)
-- [OR Operator](#or-operator)
-- [Character Classes](#character-classes)
-- [Flags](#flags)
-- [Grouping and Capturing](#grouping-and-capturing)
-- [Bracket Expressions](#bracket-expressions)
-- [Greedy and Lazy Match](#greedy-and-lazy-match)
-- [Boundaries](#boundaries)
-- [Back-references](#back-references)
-- [Look-ahead and Look-behind](#look-ahead-and-look-behind)
-- [Regex Components](#regex-components)
-- [Author](#author)
+# Purpose
 
-## Introduction
+As a web developer, you may come across features where regex can be a powerful tool to leverage. This tutorial is designed to save references for specific regex patterns, their components, and how they function. By the end of this tutorial, you'll be equipped with the knowledge to effectively use regex in your projects.
 
-A regular expression (regex) is a sequence of characters that defines a specific search pattern. In web development, regex is widely used for tasks such as validating user input, searching and replacing patterns within strings, and parsing data.
+# Tutorial GIST
 
-## Summary
+https://gist.github.com/Mwrightvet/64d7ffa4ff991589c9bcf8c65071bbf2.js
 
-This tutorial covers the following regex patterns:
+# What Is a Regex?
 
-1. Anchors
-2. Quantifiers
-3. OR Operator
-4. Character Classes
-5. Flags
-6. Grouping and Capturing
-7. Bracket Expressions
-8. Greedy and Lazy Match
-9. Boundaries
-10. Back-references
-11. Look-ahead and Look-behind
+A regex, short for regular expression, is a sequence of characters defining a specific search pattern. In the context of web development, regex is commonly used to find patterns of characters within strings, validate input, and manipulate text data. Understanding regex empowers developers to create more efficient and robust code.
 
-Each regex pattern will be explained in detail, along with examples illustrating their usage.
+# Author
 
-## Anchors
+This tutorial is authored by Mel Wright at: https://github.com/Mwrightvet.
 
-TO DO: Explanation of anchor regex components.
-
-## Quantifiers
-
-TO DO: Explanation of quantifier regex components.
-
-## OR Operator
-
-TO DO: Explanation of OR operator regex components.
-
-## Character Classes
-
-TO DO: Explanation of character classes regex components.
-
-## Flags
-
-TO DO: Explanation of flags regex components.
-
-## Grouping and Capturing
-
-TO DO: Explanation of grouping and capturing regex components.
-
-## Bracket Expressions
-
-TO DO: Explanation of bracket expressions regex components.
-
-## Greedy and Lazy Match
-
-TO DO: Explanation of greedy and lazy match regex components.
-
-## Boundaries
-
-TO DO: Explanation of boundaries regex components.
-
-## Back-references
-
-TO DO: Explanation of back-references regex components.
-
-## Look-ahead and Look-behind
-
-TO DO: Explanation of look-ahead and look-behind regex components.
-
-
-## Author
-
-This tutorial is authored by [Mel W]. You can find more about the author on [GitHub](https://github.com/Mwrightvet).
-
-
+Getting Started
+To begin exploring the tutorial, simply navigate through the table of contents and click on the links to access detailed explanations of each regex component.
