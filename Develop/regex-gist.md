@@ -16,8 +16,6 @@ This project is a tutorial explaining various regular expressions (regex) common
 - [Greedy and Lazy Match](#greedy-and-lazy-match)
 - [Boundaries](#boundaries)
 - [Back-references](#back-references)
-- [Look-ahead and Look-behind](#look-ahead-and-look-behind)
-- [Regex Components](#regex-components)
 - [Author](#author)
 
 ## Introduction
@@ -82,7 +80,7 @@ Example of an email validation using Character classes:
 [a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}
 ```
 
-[![Email Validation](./assets/quantifier-email-validation.png)](./assets/quantifier-email-validation.png)
+[![Email Validation](../assets/quantifier-email-validation.png)](../assets/quantifier-email-validation.png)
 
 ## Flags
 
@@ -164,21 +162,76 @@ console.log(text.match(consonantRegex));
 
 ## Greedy and Lazy Match
 
-TO DO: Explanation of greedy and lazy match regex components.
+Greedy matching tries to match as much of the string as possible.
+Lazy matching tries to match as little of the string as possible.
+You can control the greediness of quantifiers in regex patterns by adding a ? after them to make them lazy.
+
+Greedy Matching Example:
+
+```
+const homeAddress = "<address>123 Main Street<br>Cityville, State<br>Country</address>";
+const regexGreedy = /<address>(.*)<\/address>/;
+const matchGreedy = homeAddress.match(regexGreedy);
+console.log(matchGreedy[1]);
+// Output: "123 Main Street<br>Cityville, State<br>Country"
+```
+
+Lazy Matching Example:
+
+```const homeAddress = "<address>123 Main Street<br>Cityville, State<br>Country</address>";
+const regexLazy = /<address>(.*?)<\/address>/;
+const matchLazy = homeAddress.match(regexLazy);
+console.log(matchLazy[1]); // Output: "123 Main Street<br>"
+```
+
+[![Greedy and Lazy Match](./assets/greedy-lazy-matching.png)](./assets/greedy-lazy-matching.png)
 
 ## Boundaries
 
-TO DO: Explanation of boundaries regex components.
+boundaries define specific positions in a string rather than the actual characters themselves. They are used to match patterns that occur at the beginning, end, or between characters in a string, without consuming any characters in the match.
+
+There are several types of boundaries in regex:
+
+Word Boundaries (\b): a position where a word character (a-z, A-Z, 0-9, or underscore) is not followed or preceded by another word character.
+^ asserts the position at the beginning of a string.
+$ asserts the position at the end of a string.
+
+The examples above used boundaries to separate the
+
+```
+const homeAddress = "<address>123 Main Street<br>Cityville, State<br>Country</address>";
+const regexGreedy = /<address>(.*)<\/address>/;
+const matchGreedy = homeAddress.match(regexGreedy);
+console.log(matchGreedy[1]);
+// Output: "123 Main Street<br>Cityville, State<br>Country"
+```
+
+In the regular expression
+
+```/<address>(.*?)</address>/
+
+```
+
+the boundaries are used to looking for text that appears between <address> and </address> tags in the homeAddress string.
 
 ## Back-references
 
-TO DO: Explanation of back-references regex components.
+n regex, a back-reference allows you to refer back to a captured group within the same regular expression pattern. When you capture a group using parentheses, you can reference that captured group later in the pattern using a back-reference.
 
-## Look-ahead and Look-behind
+In the example provided earlier where we matched the content within <address> tags using a lazy regex, we didn't utilize back-references. However, I can illustrate how back-references could be used in a different context:
 
-TO DO: Explanation of look-ahead and look-behind regex components.
+If we want validate that the content within <address> tags begins and ends with the same word. We can achieve this using a regex pattern with a back-reference.
+
+```const homeAddress = "<address>123 Main Street<br>Cityville, State<br>Country</address>";
+const regexWithBackref = /<address>(\w+).*?\1<\/address>/;
+const matchWithBackref = homeAddress.match(regexWithBackref);
+console.log(matchWithBackref[0]); // Output: "<address>123 Main Street<br>Cityville, State<br>Country</address>"
+```
+
+- (\w+) captures a word (the first word) within the <address> tags.
+- .\*? matches any characters (lazily) between the opening and closing <address> tags.
+- \1 is a back-reference to the first captured group, ensuring that the content within the <address> tags ends with the same word as it started with.
 
 ## Author
 
 This tutorial is authored by [Mel W]. You can find more about the author on [GitHub](https://github.com/Mwrightvet).
-M
