@@ -16,6 +16,7 @@ This project is a tutorial explaining various regular expressions (regex) common
 - [Greedy and Lazy Match](#greedy-and-lazy-match)
 - [Boundaries](#boundaries)
 - [Back-references](#back-references)
+- [Regex Summary](#regex-summary)
 - [Author](#author)
 
 ## Introduction
@@ -105,13 +106,16 @@ const matchingProducts = productNames.filter(name => regex.test(name));
 console.log(matchingProducts); // Output: ["iPhone 11"]
 ```
 
-[![Flags-Case-Sensitive](./assets/flags-search-case-sensitive.png)](./assets/flags-search-case-sensitive.png)
+[![Flags-Case-Sensitive](../assets/flags-search-case-sensitive.png)](../assets/flags-search-case-sensitive.png)
 
 ## Grouping and Capturing
 
 Regex capturing and grouping involve defining subpatterns within a larger pattern to extract specific parts of a matched string. Capturing groups are marked by parentheses () in a regular expression.
 
-Capturing Groups: Enclosed within parentheses (), capturing groups capture and isolate specific parts of a matched string. These captured substrings can be referenced separately later on. For example, in the regex pattern /(\d{2})-(\d{2})-(\d{4})/, each set of parentheses captures the day, month, and year from a date string.
+Capturing Groups: Enclosed within parentheses (), capturing groups capture and isolate specific parts of a matched string. These captured substrings can be referenced separately later on. For example, in the regex pattern
+
+````/(\d{2})-(\d{2})-(\d{4})/
+```, each set of parentheses captures the day, month, and year from a date string.
 
 Grouping without Capturing: Non-capturing groups, denoted by (?:), function similarly to capturing groups in structuring subpatterns but do not store the matched substring. They are useful for organizing patterns without capturing specific parts.
 
@@ -132,9 +136,9 @@ const regexWithoutCapture = /(?:\d{2}-){2}\d{4}/;
 const matchWithoutCapture = text.match(regexWithoutCapture);
 console.log("\nNon-capturing group match:", matchWithoutCapture[0]);
 
-```
+````
 
-[![Grouping-Capturing](./assets/capturing-groups-and-non-groups-date.png)](./assets/capturing-groups-and-non-groups-date.png)
+[![Grouping-Capturing](../assets/capturing-groups-and-non-groups-date.png)](../assets/capturing-groups-and-non-groups-date.png)
 
 ## Bracket Expressions
 
@@ -158,7 +162,7 @@ console.log(text.match(consonantRegex));
 // Output: ['T', 'h', ' ', 'q', 'c', 'k', ' ', 'b', 'r', 'w', 'n', ' ', 'f', 'x', ' ', 'j', 'm', 'p', 's', ' ', 'v', 'r', ' ', 't', 'h', ' ', 'l', 'z', 'y', ' ', 'd', 'g', '.']
 ```
 
-[![Brackets-Example](./assets/brackets-example-vowels.png)](./assets/brackets-example-vowels.png)
+[![Brackets-Example](../assets/brackets-example-vowels.png)](../assets/brackets-example-vowels.png)
 
 ## Greedy and Lazy Match
 
@@ -184,7 +188,7 @@ const matchLazy = homeAddress.match(regexLazy);
 console.log(matchLazy[1]); // Output: "123 Main Street<br>"
 ```
 
-[![Greedy and Lazy Match](./assets/greedy-lazy-matching.png)](./assets/greedy-lazy-matching.png)
+[![Greedy and Lazy Match](../assets/greedy-lazy-matching.png)](../assets/greedy-lazy-matching.png)
 
 ## Boundaries
 
@@ -232,6 +236,32 @@ console.log(matchWithBackref[0]); // Output: "<address>123 Main Street<br>Cityvi
 - .\*? matches any characters (lazily) between the opening and closing <address> tags.
 - \1 is a back-reference to the first captured group, ensuring that the content within the <address> tags ends with the same word as it started with.
 
+[![Back References](../assets/back-references.png)](../assets/back-references.png)
+
+## Regex Summary
+
+-Password Validation Criteria:
+
+- At least 8 characters long.
+- Contains at least one uppercase letter, one lowercase letter, and one digit.
+- Does not contain consecutive repeating characters.
+- Ends with "123" but doesn't start with "abc".
+
+```regex
+^(?!.*(?:abc|123))(?!.*(\w)\1)(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}.*123$
+
+### Example:
+- `^`: Asserts the start of the string.
+- `(?!.*(?:abc|123))`: Negative look-ahead to ensure the password doesn't start with "abc" or end with "123".
+- `(?!.*(\w)\1)`: Negative look-ahead to ensure there are no consecutive repeating characters.
+- `(?=.*[A-Z])`: Positive look-ahead to ensure the password contains at least one uppercase letter.
+- `(?=.*[a-z])`: Positive look-ahead to ensure the password contains at least one lowercase letter.
+- `(?=.*\d)`: Positive look-ahead to ensure the password contains at least one digit.
+- `.{8,}`: Matches any character (except newline) at least 8 times.
+- `.*123$`: Matches any characters (except newline) ending with "123".
+- `$`: Asserts the end of the string.
+
 ## Author
 
 This tutorial is authored by [Mel W]. You can find more about the author on [GitHub](https://github.com/Mwrightvet).
+```
