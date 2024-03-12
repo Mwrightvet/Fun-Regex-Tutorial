@@ -64,15 +64,50 @@ The OR operator in regex uses two methods: one using the pipe symbol (|) to deno
 
 Example using the pipe symbol:
 
-`cat|dog `
+```regex
+cat|dog
+```
 
 ## Character Classes
 
-TO DO: Explanation of character classes regex components.
+Character classes allow matching any character from a specified set. They are enclosed in square brackets [] and match a single character from the set.
+
+[abc]: Matches a single character that is either 'a', 'b', or 'c'.
+[0-9]: Matches any digit from 0 to 9.
+[a-zA-Z]: Matches any uppercase or lowercase letter.
+
+Example of an email validation using Character classes:
+
+```
+[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}
+```
+
+[![Email Validation](./assets/quantifier-email-validation.png)](./assets/quantifier-email-validation.png)
 
 ## Flags
 
-TO DO: Explanation of flags regex components.
+Flags are optional parameters added to the end of a regex pattern to modify its behavior. Common types include:
+
+- i: Case-insensitive matching.
+- g: Global matching (find all matches rather than stopping after the first).
+- m: Multiline mode (treats beginning (^) and end ($) characters as working across multiple lines).
+
+### One such scenario is when performing case-insensitive searches.
+
+Consider a feature where users can search for products by their names. In this case, you might want the search functionality to be case-insensitive so that users can find products regardless of whether they enter the name in uppercase, lowercase, or a combination of both.
+Here's how you can use the i flag to perform a case-insensitive search in JavaScript:
+
+```
+const searchString = "iphone";
+const productNames = ["iPhone 11", "Samsung Galaxy", "Google Pixel"];
+
+const regex = new RegExp(searchString, "i");
+const matchingProducts = productNames.filter(name => regex.test(name));
+
+console.log(matchingProducts); // Output: ["iPhone 11"]
+```
+
+[![Flags-Case-Sensitive](./assets/flags-search-case-sensitive.png)](./assets/flags-search-case-sensitive.png)
 
 ## Grouping and Capturing
 
