@@ -26,5 +26,6 @@ To begin exploring the tutorial, simply navigate through the table of contents a
 
 # Credits
 
-- Url:carbon.now.sh
--
+- https://carbon.now.sh
+- https://www.regular-expressions.info/refcapture.html
+- https://plainenglish.io/blog/regular-expressions-brackets-f2d6f69ffe13
